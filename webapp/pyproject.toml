@@ -12,6 +12,7 @@ flask = "^2.3.2"
 flask-markdown = "^0.3"
 pipreqs = "^0.4.13"
 scikit-learn = "^1.2.2"
+pandas = "^2.0.2"
 
 
 [build-system]
