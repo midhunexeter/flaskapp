@@ -3,6 +3,10 @@ from numpy import random
 import chess
 from copy import deepcopy
 import itertools
+import numpy as np
+import re
+from utilities import *
+
 def get_move(board):
     moves = get_move_list_for_board(board)
     movindex =random.randint(0, len(moves))
@@ -49,4 +53,10 @@ def play_game():
             break
     return board
 
+
+
+
+board = chess.Board()
+rep = board_to_rep(board)
 df = pd.read_csv("data/games.csv")
+df2 = pd.read_csv("data/evals/chessData.csv")
