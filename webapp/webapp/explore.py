@@ -5,7 +5,7 @@ from copy import deepcopy
 import itertools
 import numpy as np
 import re
-
+from utilities import *
 
 def get_move(board):
     moves = get_move_list_for_board(board)
@@ -56,8 +56,7 @@ def play_game():
 
 
 
-
-create_rep_slice(board, typ)
-
+board = chess.Board()
+rep = board_to_rep(board)
 df = pd.read_csv("data/games.csv")
 df2 = pd.read_csv("data/evals/chessData.csv")

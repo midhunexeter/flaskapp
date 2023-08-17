@@ -1,3 +1,12 @@
+import itertools
+import re
+from copy import deepcopy
+import chess
+import numpy as np
+import pandas as pd
+from numpy import random
+
+
 def board_to_rep(board):
     pieces = ['p', 'r', 'n', 'b', 'q', 'k']
     layers = []
