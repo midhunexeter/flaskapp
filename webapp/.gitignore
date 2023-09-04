@@ -2,11 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+file1.txt
+file2.txt
 /data/evals/
 # C extensions
 *.so
-
 # Distribution / packaging
 .Python
 build/

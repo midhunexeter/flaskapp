@@ -17,7 +17,11 @@ stockfish = "^3.28.0"
 chess = "^1.9.4"
 ipykernel = "^6.23.2"
 jax = "^0.4.14"
-torch = "^2.0.1"
+torch = ">=2.0.0, !=2.0.1"
+ipython = "^8.14.0"
+jaxlib = "^0.4.14"
+optax = "^0.1.7"
+flax = "^0.7.2"
 
 
 [build-system]

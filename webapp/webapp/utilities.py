@@ -39,9 +39,9 @@ def create_rep_slice(board, typ):
 
 
 
-def move_to_rep(move):
+def move_to_rep(board, move):
     board.push_san(move).uci()
-    move = board.pop()
+    move = board.pop().__str__()
 
     from_output_layer = np.zeros((8, 8))
     from_row = 8 - int(move[1])
@@ -51,9 +51,10 @@ def move_to_rep(move):
     to_output_layer = np.zeros((8, 8))
     to_row = 8 - int(move[3])
     to_column = letter_to_num(move[2])
-    to_output_layer[from_row, from_column] = 1
+    to_output_layer[to_row, to_column] = 1
 
-    return np.stack([from_output_layer, to_output_layer])
+    board.push_san(move).uci() # moving again as the pop command before resets board
+    return np.stack([from_output_layer, to_output_layer]), board
 
 
 def letter_to_num(letter):
@@ -63,4 +64,4 @@ def letter_to_num(letter):
     return num
 
 def get_move_list(moves):
-    re.sub('\d*\.', '', moves).split(' ')[:-1]
+    return re.sub('\d*\.', '', moves).split(' ')[:-1]
